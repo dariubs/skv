@@ -30,7 +30,7 @@ jobs:
       # Reads cv.md (YAML front matter drives the left sidebar via the custom template).
       # Output lands in public/cv.pdf so GitHub Pages serves it at /cv.pdf.
       - name: Generate CV PDF
-        uses: docker://pandoc/latex:3
+        uses: docker://pandoc/extra:3
         with:
           args: >-
             cv.md
