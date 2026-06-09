@@ -1,0 +1,150 @@
+%% Two-column CV template for Pandoc + XeLaTeX
+%% Left: YAML metadata sidebar  |  Right: markdown body
+\documentclass[$fontsize$]{article}
+
+%% ── Fonts ─────────────────────────────────────────────────────
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Heros}   %% Helvetica-like sans-serif
+\setsansfont{TeX Gyre Heros}
+
+%% ── Encoding / micro-typography ───────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+
+%% ── Page geometry ─────────────────────────────────────────────
+\usepackage[$geometry$]{geometry}
+
+%% ── Colors ────────────────────────────────────────────────────
+\usepackage{xcolor}
+\definecolor{ink}{RGB}{26,26,24}
+\definecolor{gold}{RGB}{232,200,74}
+\definecolor{muted}{RGB}{107,107,98}
+\definecolor{faint}{RGB}{154,154,144}
+
+%% ── Hyperlinks ────────────────────────────────────────────────
+\usepackage[colorlinks=true, linkcolor=ink, urlcolor=ink, citecolor=ink, pdfborder={0 0 0}]{hyperref}
+
+%% ── Spacing ───────────────────────────────────────────────────
+\usepackage{parskip}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+%% ── Section headings (right column: from markdown $body$) ─────
+\usepackage{titlesec}
+\titleformat{\section}
+  {\small\bfseries}
+  {}
+  {0em}
+  {\MakeUppercase}
+  [\vspace{-0.1em}{\color{gold}\hrule height 1pt}\vspace{0.3em}]
+\titlespacing{\section}{0pt}{1.1em}{0.35em}
+
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\titlespacing{\subsection}{0pt}{0.8em}{0.1em}
+
+\titleformat{\subsubsection}{\small\bfseries}{}{0em}{}
+\titlespacing{\subsubsection}{0pt}{0.5em}{0.05em}
+
+%% ── Lists ─────────────────────────────────────────────────────
+\usepackage{enumitem}
+\setlist[itemize]{nosep, leftmargin=1.1em, itemsep=0.1em}
+\setlist[enumerate]{nosep, leftmargin=1.3em, itemsep=0.1em}
+
+%% ── Suppress page numbers ─────────────────────────────────────
+\pagestyle{empty}
+
+%% ── Tight horizontal rule ─────────────────────────────────────
+\newcommand{\goldrule}{{\color{gold}\hrule height 1.5pt}\vspace{0.5em}}
+
+%% ── Sidebar label ─────────────────────────────────────────────
+\newcommand{\sidelabel}[1]{\vspace{0.75em}{\scriptsize\bfseries\color{ink}\MakeUppercase{#1}}\par\vspace{0.2em}}
+
+\begin{document}
+\color{ink}
+
+\noindent
+%
+%% ══════════════════ LEFT SIDEBAR (28%) ══════════════════
+%
+\begin{minipage}[t]{0.28\textwidth}
+\raggedright\small
+
+%% Name
+{\normalsize\bfseries\color{ink} $name$}
+
+\vspace{0.25em}
+\goldrule
+
+%% Position & institution
+{\footnotesize\color{muted} $position$}\\[0.1em]
+{\footnotesize\color{muted} $department$}\\[0.05em]
+{\footnotesize\color{muted} $institution$}\\[0.05em]
+{\footnotesize\color{muted} $university$}
+
+%% Contact
+\sidelabel{Contact}
+{\footnotesize\color{muted} $location$}\\[0.1em]
+{\footnotesize \href{mailto:$email$}{$email$}}
+$if(website)$\\[0.08em]{\footnotesize\color{muted} \href{$website$}{Website}}$endif$
+$if(linkedin)$\\[0.08em]{\footnotesize\color{muted} \href{https://$linkedin$}{LinkedIn}}$endif$
+$if(googlescholar)$\\[0.08em]{\footnotesize\color{muted} \href{https://$googlescholar$}{Google Scholar}}$endif$
+$if(orcid)$\\[0.08em]{\footnotesize\color{muted} \href{https://orcid.org/$orcid$}{ORCID: $orcid$}}$endif$
+$if(github)$\\[0.08em]{\footnotesize\color{muted} \href{https://$github$}{GitHub}}$endif$
+
+%% Supervisor
+$if(supervisor)$
+\sidelabel{Supervisor}
+{\footnotesize\color{muted} $supervisor$}
+$if(cosupervisor)$\\[0.05em]{\footnotesize\color{muted} $cosupervisor$ (co-supervisor)}$endif$
+$endif$
+
+%% Affiliation
+$if(affiliation)$
+\sidelabel{Affiliation}
+{\footnotesize\color{muted} $affiliation$}
+$endif$
+
+%% Interests
+$if(interests)$
+\sidelabel{Interests}
+\begin{itemize}[leftmargin=*, nosep, itemsep=0.08em]
+$for(interests)$\item {\footnotesize\color{muted} $interests$}
+$endfor$
+\end{itemize}
+$endif$
+
+%% Skills
+$if(skills)$
+\sidelabel{Skills}
+$for(skills)${\footnotesize\bfseries\color{ink} $skills.category$}\\[0.06em]
+{\footnotesize\color{muted} $skills.items$}\\[0.3em]
+$endfor$
+$endif$
+
+%% Languages
+$if(languages)$
+\sidelabel{Languages}
+$for(languages)${\footnotesize\color{ink} $languages.lang$}\hfill{\footnotesize\color{faint} $languages.level$}\\[0.1em]
+$endfor$
+$endif$
+
+%% Updated
+$if(updated)$
+\vspace{1.2em}
+{\scriptsize\color{faint}\textit{Updated: $updated$}}
+$endif$
+
+\end{minipage}
+%
+\hspace{0.04\textwidth}
+%
+%% ══════════════════ RIGHT CONTENT (64%) ══════════════════
+%
+\begin{minipage}[t]{0.64\textwidth}
+\raggedright
+
+$body$
+
+\end{minipage}
+
+\end{document}

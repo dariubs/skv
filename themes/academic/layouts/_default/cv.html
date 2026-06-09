@@ -1,0 +1,103 @@
+{{ define "main" }}
+{{ $p := .Params }}
+
+<article class="pt-20">
+
+  <header class="pb-12 border-b border-border mb-16">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold tracking-tightest leading-tight text-ink">
+        {{ .Title }}
+      </h1>
+      <a href="/cv.pdf" download
+         class="text-base text-muted no-underline hover:text-ink transition-colors self-end pb-px border-b border-border hover:border-gold">
+        Download PDF&thinsp;↓
+      </a>
+    </div>
+  </header>
+
+  <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-12 lg:gap-16 items-start">
+
+    <!-- Sidebar -->
+    <aside class="text-sm leading-loose text-muted">
+
+      <p class="text-base font-semibold text-ink mb-1.5">{{ $p.name }}</p>
+      <div class="w-full h-px bg-gold mb-4"></div>
+
+      <p class="mb-1">{{ $p.position }}</p>
+      <p class="mb-1">{{ $p.department }}</p>
+      <p class="mb-1">{{ $p.institution }}</p>
+      <p class="mb-7">{{ $p.university }}</p>
+
+      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mb-3">Contact</p>
+      <p class="mb-1">{{ $p.location }}</p>
+      <a href="mailto:{{ $p.email }}" class="block text-ink no-underline hover:text-muted transition-colors mb-1">{{ $p.email }}</a>
+      {{ with $p.website }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="block hover:text-ink no-underline transition-colors mb-1">Website</a>
+      {{ end }}
+      {{ with $p.linkedin }}
+      <a href="https://{{ . }}" target="_blank" rel="noopener" class="block hover:text-ink no-underline transition-colors mb-1">LinkedIn</a>
+      {{ end }}
+      {{ with $p.googlescholar }}
+      <a href="https://{{ . }}" target="_blank" rel="noopener" class="block hover:text-ink no-underline transition-colors mb-1">Google Scholar</a>
+      {{ end }}
+      {{ with $p.orcid }}
+      <a href="https://orcid.org/{{ . }}" target="_blank" rel="noopener" class="block hover:text-ink no-underline transition-colors mb-1">ORCID</a>
+      {{ end }}
+      {{ with $p.github }}
+      <a href="https://{{ . }}" target="_blank" rel="noopener" class="block hover:text-ink no-underline transition-colors mb-1">GitHub</a>
+      {{ end }}
+
+      {{ with $p.supervisor }}
+      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mt-7 mb-3">Supervisor</p>
+      <p class="mb-1">{{ . }}</p>
+      {{ with $p.cosupervisor }}<p class="mb-1">{{ . }}<br><span class="text-faint">(co-supervisor)</span></p>{{ end }}
+      {{ end }}
+
+      {{ with $p.affiliation }}
+      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mt-7 mb-3">Affiliation</p>
+      <p>{{ . }}</p>
+      {{ end }}
+
+      {{ with $p.interests }}
+      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mt-7 mb-3">Interests</p>
+      <ul class="space-y-2 list-none p-0">
+        {{ range . }}
+        <li class="flex items-start gap-2">
+          <span class="text-gold shrink-0 mt-px">·</span><span>{{ . }}</span>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+      {{ with $p.skills }}
+      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mt-7 mb-3">Skills</p>
+      {{ range . }}
+      <p class="font-medium text-ink mb-1">{{ .category }}</p>
+      <p class="mb-3">{{ .items }}</p>
+      {{ end }}
+      {{ end }}
+
+      {{ with $p.languages }}
+      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mt-7 mb-3">Languages</p>
+      {{ range . }}
+      <div class="flex justify-between mb-1.5">
+        <span class="text-ink">{{ .lang }}</span>
+        <span class="text-faint">{{ .level }}</span>
+      </div>
+      {{ end }}
+      {{ end }}
+
+      {{ with $p.updated }}
+      <p class="text-faint italic mt-8 text-xs">Updated {{ . }}</p>
+      {{ end }}
+
+    </aside>
+
+    <div class="prose prose-ink">
+      {{ .Content }}
+    </div>
+
+  </div>
+
+</article>
+{{ end }}

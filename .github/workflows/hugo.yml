@@ -1,0 +1,47 @@
+name: Deploy Hugo site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build site
+        run: hugo --minify
+
+      # pandoc/latex Docker image has TeX Live + XeLaTeX + Pandoc pre-installed.
+      # Reads cv.md (YAML front matter drives the left sidebar via the custom template).
+      # Output lands in public/cv.pdf so GitHub Pages serves it at /cv.pdf.
+      - name: Generate CV PDF
+        uses: docker://pandoc/latex:3
+        with:
+          args: >-
+            cv.md
+            -o public/cv.pdf
+            --template=themes/academic/cv.tex
+            --pdf-engine=xelatex
+            --strip-comments
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages

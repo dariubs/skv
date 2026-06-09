@@ -1,0 +1,270 @@
+/* Tilda Sans via Tilda CDN */
+@font-face {
+  font-family: 'TildaSans';
+  src: url('https://static.tildacdn.com/fonts/tilda-sans/TildaSans-VF.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --black:   #1a1a18;
+  --gray:    #5a5a52;
+  --light:   #f5f4ef;
+  --white:   #ffffff;
+  --yellow:  #e8c84a;
+  --yellow-muted: #f5e9a8;
+  --border:  #e2e0d4;
+  --font: 'TildaSans', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout ── */
+.site-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Header / Nav ── */
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+  margin-bottom: 3.5rem;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.site-title:hover { color: var(--gray); }
+
+nav { display: flex; gap: 1.75rem; }
+
+nav a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--gray);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.15s;
+}
+
+nav a:hover,
+nav a.active { color: var(--black); }
+
+/* ── Main ── */
+main { padding-bottom: 5rem; }
+
+/* ── Home ── */
+.home-intro {
+  padding: 2rem 0 3rem;
+}
+
+.home-name {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.home-role {
+  font-size: 1rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+}
+
+.home-bio {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--black);
+  max-width: 60ch;
+  margin-bottom: 2.5rem;
+}
+
+.home-bio p + p { margin-top: 1rem; }
+
+/* ── Social links ── */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--black);
+  text-decoration: none;
+  background: var(--white);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.social-link:hover {
+  border-color: var(--yellow);
+  background: var(--yellow-muted);
+}
+
+.email-link {
+  font-size: 0.9rem;
+  color: var(--gray);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1px;
+}
+
+.email-link:hover {
+  color: var(--black);
+  border-color: var(--yellow);
+}
+
+/* ── Section pages ── */
+.page-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ── Content typography ── */
+.content h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 2.5rem 0 0.75rem;
+  color: var(--black);
+}
+
+.content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.5rem;
+  color: var(--black);
+}
+
+.content p {
+  margin-bottom: 1rem;
+  color: var(--black);
+}
+
+.content ul, .content ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.content li { margin-bottom: 0.35rem; }
+
+.content a {
+  color: var(--black);
+  text-decoration: underline;
+  text-decoration-color: var(--yellow);
+  text-underline-offset: 3px;
+}
+
+.content a:hover { color: var(--gray); }
+
+/* ── Tag / badge ── */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  background: var(--yellow-muted);
+  border: 1px solid var(--yellow);
+  border-radius: 3px;
+  color: var(--black);
+  margin: 0.2rem 0.2rem 0.2rem 0;
+}
+
+/* ── Publication / paper card ── */
+.paper {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.paper:last-child { border-bottom: none; }
+
+.paper-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.paper-meta {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 0.4rem;
+}
+
+.paper-status {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--gray);
+}
+
+/* ── CV download button ── */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--yellow);
+  color: var(--black);
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: background 0.15s;
+}
+
+.btn:hover { background: #d4b030; }
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+/* ── Responsive ── */
+@media (max-width: 540px) {
+  .home-name { font-size: 1.6rem; }
+  nav { gap: 1.1rem; }
+  .header-inner { flex-direction: column; align-items: flex-start; }
+}

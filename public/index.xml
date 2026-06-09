@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Sanaz Kakavand</title>
+		<link>https://sanazkv.github.io/</link>
+		<description>Recent content on Sanaz Kakavand</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://sanazkv.github.io/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Bio</title>
+				<link>https://sanazkv.github.io/bio/</link>
+				<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://sanazkv.github.io/bio/</guid>
+				<description>&lt;h2 id=&#34;about&#34;&gt;About&lt;/h2&gt;&#xA;&lt;p&gt;I am a PhD candidate in Business Technology Management at the Haskayne School of Business, University of Calgary. My work is driven by a central question: &lt;em&gt;why do people behave the way they do under different system designs?&lt;/em&gt; I apply economic modelling, behavioral theory, and empirical analysis to understand the unintended consequences that emerge when platform designers and policymakers intervene in digital markets.&lt;/p&gt;&#xA;&lt;p&gt;I am a member of the &lt;strong&gt;Informatics Research Centre (iRC)&lt;/strong&gt; and am supervised by Dr. Hooman Hidaji.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Research</title>
+				<link>https://sanazkv.github.io/research/</link>
+				<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://sanazkv.github.io/research/</guid>
+				<description>&lt;p&gt;My dissertation investigates how different monetization models shape &lt;strong&gt;user behavior and welfare&lt;/strong&gt; across digital platforms. The work combines analytical economic modelling with empirical analysis to uncover unintended consequences in platform and regulatory design.&lt;/p&gt;&#xA;&lt;h2 id=&#34;dissertation-projects&#34;&gt;Dissertation Projects&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1--blockchain--move-to-earn-gaming&#34;&gt;1 · Blockchain &amp;amp; Move-to-Earn Gaming&lt;/h3&gt;&#xA;&lt;p&gt;This paper analyzes tokenized incentive systems in blockchain-based gaming platforms, using &lt;strong&gt;STEPN&lt;/strong&gt; — a move-to-earn app that rewards physical activity with cryptocurrency — as a primary case study. I examine how token economics influence user motivation, participation dynamics, and long-run platform sustainability. The analysis explores when financial incentives enhance versus crowd out intrinsic motivation.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Teaching</title>
+				<link>https://sanazkv.github.io/teaching/</link>
+				<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://sanazkv.github.io/teaching/</guid>
+				<description>&lt;h2 id=&#34;teaching-philosophy&#34;&gt;Teaching Philosophy&lt;/h2&gt;&#xA;&lt;p&gt;I believe effective teaching connects abstract concepts to real-world outcomes. My goal is to help students build intuition about how digital systems shape economic and social behavior — and to ask better questions about the consequences of design choices.&lt;/p&gt;&#xA;&lt;h2 id=&#34;courses&#34;&gt;Courses&lt;/h2&gt;&#xA;&lt;h3 id=&#34;university-of-calgary--haskayne-school-of-business&#34;&gt;University of Calgary — Haskayne School of Business&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Teaching Assistant / Course Instructor&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Details on specific courses, sections, and semesters will be listed here. Please &lt;a href=&#34;mailto:sanazkv@gmail.com&#34;&gt;contact me&lt;/a&gt; for syllabi or course materials.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>CV</title>
+				<link>https://sanazkv.github.io/cv/</link>
+				<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+				<guid>https://sanazkv.github.io/cv/</guid>
+				<description>&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;PhD, Business Technology Management&lt;/strong&gt; · 2021 – present&#xA;Haskayne School of Business, University of Calgary&#xA;Supervisor: Dr. Hooman Hidaji · Informatics Research Centre (iRC)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Master&amp;rsquo;s Degree&lt;/strong&gt; · prior to 2021&#xA;Iran&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;dissertation&#34;&gt;Dissertation&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Monetization Models and User Behavior on Digital Platforms&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Chapter 1 — Blockchain &amp;amp; Move-to-Earn Gaming&lt;/strong&gt;&#xA;Analyzes tokenized incentive systems using STEPN as a case study. Examines how financial rewards interact with intrinsic motivation, user retention, and long-run platform sustainability.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

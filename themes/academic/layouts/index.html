@@ -1,0 +1,114 @@
+{{ define "main" }}
+{{ $p := .Site.Params }}
+
+<section class="pt-24 pb-24">
+
+  <!-- Name -->
+  <h1 class="text-[clamp(3rem,9vw,5.5rem)] font-bold tracking-tightest leading-none text-ink mb-6">
+    Sanaz<br>Kakavand
+  </h1>
+
+  <!-- Gold accent -->
+  <div class="w-10 h-[3px] bg-gold mb-10"></div>
+
+  <!-- Role -->
+  <p class="text-base text-muted mb-12">
+    {{ $p.role }} &mdash; {{ $p.affiliation }}
+  </p>
+
+  <!-- Bio -->
+  <div class="prose prose-ink mb-16 max-w-[58ch]">
+    {{ .Content }}
+  </div>
+
+  <!-- ── Contact & links ── -->
+  <div class="border-t border-border pt-10">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+      <!-- Email -->
+      <a href="mailto:{{ $p.email }}"
+         class="group flex items-center gap-3 text-base text-muted no-underline hover:text-ink transition-colors py-1">
+        <span class="text-faint group-hover:text-gold transition-colors shrink-0">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="16" height="13" rx="1.5"/>
+            <path d="M2 7l8 5.5L18 7"/>
+          </svg>
+        </span>
+        <span>{{ $p.email }}</span>
+      </a>
+
+      <!-- LinkedIn -->
+      {{ with $p.social.linkedin }}
+      <a href="{{ . }}" target="_blank" rel="noopener"
+         class="group flex items-center gap-3 text-base text-muted no-underline hover:text-ink transition-colors py-1">
+        <span class="text-faint group-hover:text-gold transition-colors shrink-0">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="16" height="16" rx="2"/>
+            <path d="M6 9v5M6 6.5v.01"/>
+            <path d="M10 14v-2.5a2.5 2.5 0 0 1 5 0V14"/>
+            <path d="M10 9v5"/>
+          </svg>
+        </span>
+        <span>LinkedIn</span>
+      </a>
+      {{ end }}
+
+      <!-- Google Scholar -->
+      {{ with $p.social.googlescholar }}
+      <a href="{{ . }}" target="_blank" rel="noopener"
+         class="group flex items-center gap-3 text-base text-muted no-underline hover:text-ink transition-colors py-1">
+        <span class="text-faint group-hover:text-gold transition-colors shrink-0">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 6l8-4 8 4-8 4-8-4Z"/>
+            <path d="M18 6v5"/>
+            <path d="M6 8v4.5c0 2 1.8 3.5 4 3.5s4-1.5 4-3.5V8"/>
+          </svg>
+        </span>
+        <span>Google Scholar</span>
+      </a>
+      {{ end }}
+
+      <!-- Twitter / X -->
+      {{ with $p.social.twitter }}
+      <a href="{{ . }}" target="_blank" rel="noopener"
+         class="group flex items-center gap-3 text-base text-muted no-underline hover:text-ink transition-colors py-1">
+        <span class="text-faint group-hover:text-gold transition-colors shrink-0">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M15.27 2h2.76L12.06 8.63 19 18h-5.19l-3.7-4.84L5.73 18H2.97l6.35-7.26L2 2h5.33l3.35 4.38L15.27 2Zm-.97 14.38h1.53L5.74 3.53H4.1l10.2 12.85Z"/>
+          </svg>
+        </span>
+        <span>Twitter / X</span>
+      </a>
+      {{ end }}
+
+      <!-- GitHub -->
+      {{ with $p.social.github }}
+      <a href="{{ . }}" target="_blank" rel="noopener"
+         class="group flex items-center gap-3 text-base text-muted no-underline hover:text-ink transition-colors py-1">
+        <span class="text-faint group-hover:text-gold transition-colors shrink-0">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 1.5a8.5 8.5 0 0 0-2.686 16.57c.425.078.58-.184.58-.41 0-.202-.007-.737-.011-1.446-2.364.513-2.863-1.14-2.863-1.14-.387-.981-.944-1.242-.944-1.242-.771-.527.058-.517.058-.517.853.06 1.302.876 1.302.876.758 1.299 1.99.924 2.476.706.077-.549.297-.924.54-1.136-1.888-.214-3.873-.944-3.873-4.204 0-.928.332-1.688.876-2.283-.088-.215-.38-1.08.083-2.25 0 0 .714-.228 2.34.873A8.145 8.145 0 0 1 10 6.78c.723.003 1.45.098 2.13.287 1.624-1.1 2.337-.873 2.337-.873.464 1.17.172 2.035.085 2.25.545.595.875 1.355.875 2.283 0 3.268-1.988 3.987-3.882 4.197.305.263.577.781.577 1.575 0 1.137-.01 2.054-.01 2.334 0 .227.153.492.584.409A8.502 8.502 0 0 0 10 1.5Z"/>
+          </svg>
+        </span>
+        <span>GitHub</span>
+      </a>
+      {{ end }}
+
+      <!-- CV download -->
+      <a href="/cv.pdf"
+         class="group flex items-center gap-3 text-base text-muted no-underline hover:text-ink transition-colors py-1">
+        <span class="text-faint group-hover:text-gold transition-colors shrink-0">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 2v10M6 8l4 4 4-4"/>
+            <path d="M3 15h14"/>
+          </svg>
+        </span>
+        <span>Download CV</span>
+      </a>
+
+    </div>
+  </div>
+
+</section>
+{{ end }}

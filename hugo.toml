@@ -1,0 +1,58 @@
+baseURL = "https://sanazkv.github.io/"
+locale = "en-us"
+title = "Sanaz Kakavand"
+theme = "academic"
+disableKinds = ["taxonomy", "term"]
+
+# Serve markdown files from the project root
+contentDir = "."
+
+# Exclude non-content files/dirs picked up by contentDir = "."
+ignoreFiles = [
+  "CLAUDE\\.md",
+  "README\\.md",
+  "LICENSE\\.md",
+  "/themes/",
+  "/archetypes/",
+  "/static/",
+  "/public/",
+  "/resources/",
+  "/\\.github/",
+  "/\\.claude/",
+  "\\.html$",
+  "\\.toml$",
+  "\\.yml$",
+  "\\.yaml$",
+  "\\.json$",
+]
+
+[params]
+  name = "Sanaz Kakavand"
+  role = "PhD Candidate"
+  affiliation = "Haskayne School of Business, University of Calgary"
+  email = "sanazkv@gmail.com"
+  description = "PhD candidate in Business Technology Management studying digital platform economics, privacy, and user behavior."
+
+  [params.social]
+    linkedin      = "https://www.linkedin.com/in/sanazkakavand"
+    googlescholar = "https://scholar.google.com/citations?user=YOURID"
+    twitter       = "https://twitter.com/sanazkv"
+    github        = "https://github.com/sanazkv"
+
+[menu]
+  [[menu.main]]
+    name   = "Bio"
+    url    = "/bio/"
+    weight = 1
+  [[menu.main]]
+    name   = "Research"
+    url    = "/research/"
+    weight = 2
+  [[menu.main]]
+    name   = "Teaching"
+    url    = "/teaching/"
+    weight = 3
+  [[menu.main]]
+    name   = "CV"
+    url    = "/cv/"
+    weight = 4

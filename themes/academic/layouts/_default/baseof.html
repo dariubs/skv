@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ if .IsHome }}{{ .Site.Params.name }}{{ else }}{{ .Title }} — {{ .Site.Params.name }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+
+  <style>
+    @font-face {
+      font-family: 'TildaSans';
+      src: url('https://static.tildacdn.com/fonts/tilda-sans/TildaSans-VF.woff2') format('woff2-variations');
+      font-weight: 100 900;
+      font-display: swap;
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['TildaSans', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            ink:         '#1a1a18',
+            muted:       '#6b6b62',
+            faint:       '#a0a096',
+            border:      '#e2dfd6',
+            gold:        '#e8c84a',
+            'gold-soft': '#f7f0c8',
+          },
+          letterSpacing: {
+            tightest: '-0.04em',
+          },
+          typography: ({ theme }) => ({
+            ink: {
+              css: {
+                '--tw-prose-body':     theme('colors.ink'),
+                '--tw-prose-headings': theme('colors.ink'),
+                '--tw-prose-links':    theme('colors.ink'),
+                '--tw-prose-bold':     theme('colors.ink'),
+                '--tw-prose-hr':       theme('colors.border'),
+                '--tw-prose-bullets':  theme('colors.muted'),
+                '--tw-prose-counters': theme('colors.muted'),
+                fontSize: '1.0625rem',
+                lineHeight: '1.9',
+                maxWidth: 'none',
+                h2: {
+                  fontSize: '1.375rem',
+                  fontWeight: '700',
+                  letterSpacing: '-0.01em',
+                  color: theme('colors.ink'),
+                  marginTop: '3.5rem',
+                  marginBottom: '1.25rem',
+                  paddingBottom: '0.6rem',
+                  borderBottom: `1px solid ${theme('colors.gold')}`,
+                },
+                h3: {
+                  fontSize: '1.15rem',
+                  fontWeight: '600',
+                  letterSpacing: '-0.01em',
+                  marginTop: '2.25rem',
+                  marginBottom: '0.5rem',
+                },
+                h4: {
+                  fontSize: '1.0625rem',
+                  fontWeight: '600',
+                  marginTop: '1.75rem',
+                  marginBottom: '0.35rem',
+                },
+                h5: {
+                  fontSize: '1rem',
+                  fontWeight: '600',
+                  marginTop: '1.5rem',
+                  marginBottom: '0.25rem',
+                },
+                h6: {
+                  fontSize: '0.9375rem',
+                  fontWeight: '600',
+                  color: theme('colors.muted'),
+                  marginTop: '1.25rem',
+                  marginBottom: '0.25rem',
+                },
+                a: {
+                  fontWeight: '400',
+                  textDecoration: 'underline',
+                  textDecorationColor: theme('colors.gold'),
+                  textUnderlineOffset: '3px',
+                  '&:hover': { color: theme('colors.muted') },
+                },
+                hr: {
+                  borderColor: theme('colors.border'),
+                  marginTop: '2.5rem',
+                  marginBottom: '2.5rem',
+                },
+                'ul > li::marker': { color: theme('colors.gold') },
+                'ol > li::marker': { color: theme('colors.muted') },
+                p: { marginBottom: '1.25rem' },
+                li: { marginBottom: '0.4rem' },
+              },
+            },
+          }),
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-white text-ink font-sans antialiased min-h-screen flex flex-col">
+
+  <header class="border-b border-border">
+    <div class="max-w-[860px] mx-auto px-8 py-5 flex items-center justify-between gap-6 flex-wrap">
+
+      <a href="{{ "/" | relURL }}"
+         class="text-sm font-semibold text-ink no-underline hover:text-muted transition-colors tracking-tight">
+        Sanaz Kakavand
+      </a>
+
+      <nav class="flex items-center gap-5">
+        {{ range .Site.Menus.main }}
+        {{ $active := eq $.RelPermalink .URL }}
+        <a href="{{ .URL }}"
+           class="inline-flex items-center gap-1.5 text-sm no-underline transition-colors pb-px
+                  {{ if $active }}text-ink border-b border-gold{{ else }}text-muted hover:text-ink border-b border-transparent{{ end }}">
+          {{ if eq .Name "Bio" }}
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+            <circle cx="10" cy="6" r="3.5"/>
+            <path d="M2.5 18c0-4.142 3.358-7.5 7.5-7.5s7.5 3.358 7.5 7.5"/>
+          </svg>
+          {{ else if eq .Name "Research" }}
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+            <circle cx="8.5" cy="8.5" r="5.5"/>
+            <path d="M17.5 17.5l-3.5-3.5"/>
+          </svg>
+          {{ else if eq .Name "Teaching" }}
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 5l8-3 8 3-8 3-8-3Z"/>
+            <path d="M18 5v6"/>
+            <path d="M6 7.5v5c0 1.5 1.8 3 4 3s4-1.5 4-3v-5"/>
+          </svg>
+          {{ else if eq .Name "CV" }}
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="12" height="16" rx="1.5"/>
+            <path d="M7 7h6M7 10h6M7 13h4"/>
+          </svg>
+          {{ end }}
+          {{ .Name }}
+        </a>
+        {{ end }}
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-[860px] mx-auto w-full px-8 pb-24">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="border-t border-border">
+    <div class="max-w-[860px] mx-auto px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+      <span class="text-sm text-faint">© {{ now.Year }} {{ .Site.Params.name }}</span>
+      <span class="text-sm text-faint">{{ .Site.Params.affiliation }}</span>
+    </div>
+  </footer>
+
+</body>
+</html>

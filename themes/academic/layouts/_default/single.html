@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="pt-20">
+
+  <header class="pb-12 border-b border-border mb-16">
+    <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold tracking-tightest leading-tight text-ink">
+      {{ .Title }}
+    </h1>
+  </header>
+
+  <div class="prose prose-ink">
+    {{ .Content }}
+  </div>
+
+</article>
+{{ end }}
