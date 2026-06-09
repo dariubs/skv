@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV — Sanaz Kakavand</title>
   <meta name="description" content="Curriculum vitae of Sanaz Kakavand — PhD candidate in Business Technology Management." />
 
+  
   <style>
     @font-face {
       font-family: 'TildaSans';
@@ -15,6 +16,7 @@
     }
   </style>
 
+  
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
     tailwind.config = {
@@ -24,81 +26,30 @@
             sans: ['TildaSans', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
           },
           colors: {
-            ink:         '#1a1a18',
-            muted:       '#6b6b62',
-            faint:       '#a0a096',
-            border:      '#e2dfd6',
-            gold:        '#e8c84a',
-            'gold-soft': '#f7f0c8',
-          },
-          letterSpacing: {
-            tightest: '-0.04em',
+            ink:    '#1a1a18',
+            muted:  '#5a5a52',
+            cream:  '#f5f4ef',
+            border: '#e2e0d4',
+            gold:   '#e8c84a',
+            'gold-soft': '#f5e9a8',
           },
           typography: ({ theme }) => ({
             ink: {
               css: {
-                '--tw-prose-body':     theme('colors.ink'),
-                '--tw-prose-headings': theme('colors.ink'),
-                '--tw-prose-links':    theme('colors.ink'),
-                '--tw-prose-bold':     theme('colors.ink'),
-                '--tw-prose-hr':       theme('colors.border'),
-                '--tw-prose-bullets':  theme('colors.muted'),
-                '--tw-prose-counters': theme('colors.muted'),
-                fontSize: '1.0625rem',
-                lineHeight: '1.9',
-                maxWidth: 'none',
-                h2: {
-                  fontSize: '1.375rem',
-                  fontWeight: '700',
-                  letterSpacing: '-0.01em',
-                  color: theme('colors.ink'),
-                  marginTop: '3.5rem',
-                  marginBottom: '1.25rem',
-                  paddingBottom: '0.6rem',
-                  borderBottom: `1px solid ${theme('colors.gold')}`,
-                },
-                h3: {
-                  fontSize: '1.15rem',
-                  fontWeight: '600',
-                  letterSpacing: '-0.01em',
-                  marginTop: '2.25rem',
-                  marginBottom: '0.5rem',
-                },
-                h4: {
-                  fontSize: '1.0625rem',
-                  fontWeight: '600',
-                  marginTop: '1.75rem',
-                  marginBottom: '0.35rem',
-                },
-                h5: {
-                  fontSize: '1rem',
-                  fontWeight: '600',
-                  marginTop: '1.5rem',
-                  marginBottom: '0.25rem',
-                },
-                h6: {
-                  fontSize: '0.9375rem',
-                  fontWeight: '600',
-                  color: theme('colors.muted'),
-                  marginTop: '1.25rem',
-                  marginBottom: '0.25rem',
-                },
+                '--tw-prose-body':       theme('colors.ink'),
+                '--tw-prose-headings':   theme('colors.ink'),
+                '--tw-prose-links':      theme('colors.ink'),
+                '--tw-prose-bold':       theme('colors.ink'),
+                '--tw-prose-quotes':     theme('colors.muted'),
+                '--tw-prose-hr':         theme('colors.border'),
+                '--tw-prose-bullets':    theme('colors.muted'),
+                '--tw-prose-counters':   theme('colors.muted'),
                 a: {
-                  fontWeight: '400',
                   textDecoration: 'underline',
                   textDecorationColor: theme('colors.gold'),
                   textUnderlineOffset: '3px',
                   '&:hover': { color: theme('colors.muted') },
                 },
-                hr: {
-                  borderColor: theme('colors.border'),
-                  marginTop: '2.5rem',
-                  marginBottom: '2.5rem',
-                },
-                'ul > li::marker': { color: theme('colors.gold') },
-                'ol > li::marker': { color: theme('colors.muted') },
-                p: { marginBottom: '1.25rem' },
-                li: { marginBottom: '0.4rem' },
               },
             },
           }),
@@ -107,197 +58,50 @@
     }
   </script>
 </head>
-
-<body class="bg-white text-ink font-sans antialiased min-h-screen flex flex-col">
-
-  <header class="border-b border-border">
-    <div class="max-w-[860px] mx-auto px-8 py-5 flex items-center justify-between gap-6 flex-wrap">
-
-      <a href="/"
-         class="text-sm font-semibold text-ink no-underline hover:text-muted transition-colors tracking-tight">
-        Sanaz Kakavand
-      </a>
-
-      <nav class="flex items-center gap-5">
-        
-        
-        <a href="/bio/"
-           class="inline-flex items-center gap-1.5 text-sm no-underline transition-colors pb-px
-                  text-muted hover:text-ink border-b border-transparent">
-          
-          <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
-            <circle cx="10" cy="6" r="3.5"/>
-            <path d="M2.5 18c0-4.142 3.358-7.5 7.5-7.5s7.5 3.358 7.5 7.5"/>
-          </svg>
-          
-          Bio
-        </a>
-        
-        
-        <a href="/research/"
-           class="inline-flex items-center gap-1.5 text-sm no-underline transition-colors pb-px
-                  text-muted hover:text-ink border-b border-transparent">
-          
-          <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
-            <circle cx="8.5" cy="8.5" r="5.5"/>
-            <path d="M17.5 17.5l-3.5-3.5"/>
-          </svg>
-          
-          Research
-        </a>
-        
-        
-        <a href="/teaching/"
-           class="inline-flex items-center gap-1.5 text-sm no-underline transition-colors pb-px
-                  text-muted hover:text-ink border-b border-transparent">
-          
-          <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 5l8-3 8 3-8 3-8-3Z"/>
-            <path d="M18 5v6"/>
-            <path d="M6 7.5v5c0 1.5 1.8 3 4 3s4-1.5 4-3v-5"/>
-          </svg>
-          
-          Teaching
-        </a>
-        
-        
-        <a href="/cv/"
-           class="inline-flex items-center gap-1.5 text-sm no-underline transition-colors pb-px
-                  text-ink border-b border-gold">
-          
-          <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="2" width="12" height="16" rx="1.5"/>
-            <path d="M7 7h6M7 10h6M7 13h4"/>
-          </svg>
-          
-          CV
-        </a>
-        
-      </nav>
-
-    </div>
-  </header>
-
-  <main class="flex-1 max-w-[860px] mx-auto w-full px-8 pb-24">
-    
-
-
-<article class="pt-20">
-
-  <header class="pb-12 border-b border-border mb-16">
-    <div class="flex flex-wrap items-end justify-between gap-6">
-      <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold tracking-tightest leading-tight text-ink">
-        CV
-      </h1>
-      <a href="/cv.pdf" download
-         class="text-base text-muted no-underline hover:text-ink transition-colors self-end pb-px border-b border-border hover:border-gold">
-        Download PDF&thinsp;↓
-      </a>
-    </div>
-  </header>
-
-  <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-12 lg:gap-16 items-start">
+<body class="bg-white text-ink font-sans antialiased">
+  <div class="max-w-2xl mx-auto px-6">
 
     
-    <aside class="text-sm leading-loose text-muted">
-
-      <p class="text-base font-semibold text-ink mb-1.5">Sanaz Kakavand</p>
-      <div class="w-full h-px bg-gold mb-4"></div>
-
-      <p class="mb-1">PhD Candidate</p>
-      <p class="mb-1">Business Technology Management</p>
-      <p class="mb-1">Haskayne School of Business</p>
-      <p class="mb-7">University of Calgary</p>
-
-      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mb-3">Contact</p>
-      <p class="mb-1">Calgary, AB, Canada</p>
-      <a href="mailto:sanazkv@gmail.com" class="block text-ink no-underline hover:text-muted transition-colors mb-1">sanazkv@gmail.com</a>
-      
-      <a href="https://sanazkv.github.io" target="_blank" rel="noopener" class="block hover:text-ink no-underline transition-colors mb-1">Website</a>
-      
-      
-      <a href="https://linkedin.com/in/sanazkakavand" target="_blank" rel="noopener" class="block hover:text-ink no-underline transition-colors mb-1">LinkedIn</a>
-      
-      
-      <a href="https://scholar.google.com/citations?user=YOURID" target="_blank" rel="noopener" class="block hover:text-ink no-underline transition-colors mb-1">Google Scholar</a>
-      
-      
-      
-      <a href="https://github.com/sanazkv" target="_blank" rel="noopener" class="block hover:text-ink no-underline transition-colors mb-1">GitHub</a>
-      
-
-      
-      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mt-7 mb-3">Supervisor</p>
-      <p class="mb-1">Dr. Hooman Hidaji</p>
-      
-      
-
-      
-      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mt-7 mb-3">Affiliation</p>
-      <p>Informatics Research Centre (iRC)</p>
-      
-
-      
-      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mt-7 mb-3">Interests</p>
-      <ul class="space-y-2 list-none p-0">
-        
-        <li class="flex items-start gap-2">
-          <span class="text-gold shrink-0 mt-px">·</span><span>Digital Platform Economics</span>
-        </li>
-        
-        <li class="flex items-start gap-2">
-          <span class="text-gold shrink-0 mt-px">·</span><span>Privacy &amp; Data Regulation</span>
-        </li>
-        
-        <li class="flex items-start gap-2">
-          <span class="text-gold shrink-0 mt-px">·</span><span>Blockchain &amp; Token Systems</span>
-        </li>
-        
-        <li class="flex items-start gap-2">
-          <span class="text-gold shrink-0 mt-px">·</span><span>Behavioral Economics</span>
-        </li>
-        
-        <li class="flex items-start gap-2">
-          <span class="text-gold shrink-0 mt-px">·</span><span>User Welfare</span>
-        </li>
-        
-      </ul>
-      
-
-      
-      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mt-7 mb-3">Skills</p>
-      
-      <p class="font-medium text-ink mb-1">Methods</p>
-      <p class="mb-3">Analytical Modelling, Empirical Analysis, Game Theory</p>
-      
-      <p class="font-medium text-ink mb-1">Tools</p>
-      <p class="mb-3">Stata, R, Python, LaTeX</p>
-      
-      
-
-      
-      <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink mt-7 mb-3">Languages</p>
-      
-      <div class="flex justify-between mb-1.5">
-        <span class="text-ink">English</span>
-        <span class="text-faint">Fluent</span>
+    <header class="border-b border-border py-5 mb-14">
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <a href="/" class="text-sm font-semibold tracking-wide text-ink hover:text-muted transition-colors no-underline">
+          Sanaz Kakavand
+        </a>
+        <nav class="flex gap-6">
+          
+          <a href="/bio/"
+             class="text-sm text-muted hover:text-ink transition-colors no-underline ">
+            Bio
+          </a>
+          
+          <a href="/research/"
+             class="text-sm text-muted hover:text-ink transition-colors no-underline ">
+            Research
+          </a>
+          
+          <a href="/teaching/"
+             class="text-sm text-muted hover:text-ink transition-colors no-underline ">
+            Teaching
+          </a>
+          
+          <a href="/cv/"
+             class="text-sm text-muted hover:text-ink transition-colors no-underline !text-ink font-medium">
+            CV
+          </a>
+          
+        </nav>
       </div>
-      
-      <div class="flex justify-between mb-1.5">
-        <span class="text-ink">Persian (Farsi)</span>
-        <span class="text-faint">Native</span>
-      </div>
-      
-      
+    </header>
 
+    
+    <main class="pb-20">
       
-      <p class="text-faint italic mt-8 text-xs">Updated June 2026</p>
-      
-
-    </aside>
-
-    <div class="prose prose-ink">
-      <h2 id="education">Education</h2>
+<article>
+  <header class="mb-8 pb-6 border-b border-border">
+    <h1 class="text-2xl font-semibold tracking-tight">CV</h1>
+  </header>
+  <div class="prose prose-ink max-w-none">
+    <h2 id="education">Education</h2>
 <p><strong>PhD, Business Technology Management</strong> · 2021 – present
 Haskayne School of Business, University of Calgary
 Supervisor: Dr. Hooman Hidaji · Informatics Research Centre (iRC)</p>
@@ -325,20 +129,16 @@ Examines how broad data privacy frameworks shape platform investment, competitio
 <h2 id="publications--working-papers">Publications &amp; Working Papers</h2>
 <p>Working papers available upon request. Please contact <a href="mailto:sanazkv@gmail.com">sanazkv@gmail.com</a>.</p>
 
-    </div>
-
   </div>
-
 </article>
 
-  </main>
+    </main>
 
-  <footer class="border-t border-border">
-    <div class="max-w-[860px] mx-auto px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-      <span class="text-sm text-faint">© 2026 Sanaz Kakavand</span>
-      <span class="text-sm text-faint">Haskayne School of Business, University of Calgary</span>
-    </div>
-  </footer>
+    
+    <footer class="border-t border-border py-6 mt-16 text-xs text-muted">
+      © 2026 Sanaz Kakavand · Haskayne School of Business, University of Calgary
+    </footer>
 
+  </div>
 </body>
 </html>

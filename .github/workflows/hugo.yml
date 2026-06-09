@@ -26,23 +26,17 @@ jobs:
       - name: Build site
         run: hugo --minify
 
-      - name: Install Pandoc and XeLaTeX
+      - name: Install Typst
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-extra
-
-      - name: Install Tilda Sans font
-        run: |
-          sudo mkdir -p /usr/local/share/fonts/tildasans
-          sudo cp static/fonts/TildaSans-VF.ttf /usr/local/share/fonts/tildasans/
-          sudo fc-cache -f
+          TYPST_URL=$(curl -fsSL https://api.github.com/repos/typst/typst/releases/latest \
+            | grep "browser_download_url" \
+            | grep "x86_64-unknown-linux-musl\.tar\.xz" \
+            | cut -d'"' -f4)
+          curl -fsSL "$TYPST_URL" | tar -xJ -C /tmp
+          sudo mv /tmp/typst-x86_64-unknown-linux-musl/typst /usr/local/bin/typst
 
       - name: Generate CV PDF
-        run: |
-          pandoc cv.md -o public/cv.pdf \
-            --template=themes/academic/cv.tex \
-            --pdf-engine=xelatex \
-            --strip-comments
+        run: typst compile --font-path static/fonts cv.typ public/cv.pdf
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
