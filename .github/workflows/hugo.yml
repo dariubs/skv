@@ -26,17 +26,22 @@ jobs:
       - name: Build site
         run: hugo --minify
 
-      # pandoc/latex Docker image has TeX Live + XeLaTeX + Pandoc pre-installed.
-      # Reads cv.md (YAML front matter drives the left sidebar via the custom template).
-      # Output lands in public/cv.pdf so GitHub Pages serves it at /cv.pdf.
+      - name: Install Pandoc and XeLaTeX
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-extra
+
+      - name: Install Tilda Sans font
+        run: |
+          sudo mkdir -p /usr/local/share/fonts/tildasans
+          sudo cp static/fonts/TildaSans-VF.ttf /usr/local/share/fonts/tildasans/
+          sudo fc-cache -f
+
       - name: Generate CV PDF
-        uses: docker://pandoc/extra:3
-        with:
-          args: >-
-            cv.md
-            -o public/cv.pdf
-            --template=themes/academic/cv.tex
-            --pdf-engine=xelatex
+        run: |
+          pandoc cv.md -o public/cv.pdf \
+            --template=themes/academic/cv.tex \
+            --pdf-engine=xelatex \
             --strip-comments
 
       - name: Deploy to gh-pages
